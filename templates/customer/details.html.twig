@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html.twig' %}
+{% block title 'Show Customer details' %}
+
+{% block body %}
+<h2 class="h3 text-primary text-center">Details for the user {{customers.id}}</h2>
+    <div class="centre col-6">
+        <h2>{{customers.name}}</h2>
+        <p>{{customers.phone}}</p>
+        <p>{{customers.company}}</p>
+        <p>{{customers.poste}}</p>
+        <div>
+            <a href="{{ path('app_customer_update', {id: customers.id}) }}">Edit</a>
+            <a href="{{ path('app_customer_delete', {id: customers.id}) }}">Delete</a>
+        </div>
+    </div>
+{% endblock %}
+    

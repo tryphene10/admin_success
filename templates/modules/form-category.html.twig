@@ -1,0 +1,105 @@
+{% extends 'layouts/base.html.twig'%}
+{% block title 'My admin dashboard page' %}
+
+{% block body %}
+  <body class="vertical-layout vertical-menu-modern 2-columns   menu-collapsed fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+
+    {{ include("layouts/partials/_header.html.twig") }}
+
+
+   {{ include("layouts/partials/_menu.html.twig") }}
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+
+        <div class="content-body"><!-- Form repeater section start -->
+
+
+<!-- Form control repeater section start -->
+<section id="form-control-repeater">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="file-repeater">Add a new category</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="fas fa-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="fas fa-sync"></i></a></li>
+                            <li><a data-action="expand"><i class="fas fa-window-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="fas fa-times"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+
+                        {{ form_start(formulaire) }}
+                            {{ form_widget(formulaire) }}
+                            <div class="col-6 mx-auto">
+                              <button type="submit" class="btn btn-block btn-lg btn-secondary text-white">Add</button>
+                            </div>
+                        {{ form_end(formulaire) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi-column ordering table -->
+
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Data Table Category </h4>
+                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="feather icon-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="feather icon-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="feather icon-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body card-dashboard">
+                        <p class="card-text">DataTables allows all category</p>
+                        <table class="table table-striped table-bordered multi-ordering">
+                            <thead>
+                                <tr>
+                                    <th>Numero</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for category in categories %}
+                              <tr>
+                                    <td>{{category.id}}</td>
+                                    <td>{{category.name}}</td>
+                                    <td>{{category.description}}</td>
+                              </tr>
+                            {% endfor %}
+                  
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--/ Multi-column ordering table -->
+</section>
+<!-- // Form control repeater section end -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+
+  </body>
+{% endblock %}

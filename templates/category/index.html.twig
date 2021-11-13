@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+{% block body %}
+
+    <div class="fred">
+        <h1 class="h3 text-primary text-center mt-5">
+            {{ plurilaze(category | length, 'Category', 'Categories') }}
+        </h1>
+    </div>
+
+    <div class="parents row d-flex">
+
+        {% for item in category %}
+           <div class="items col-3 bg-info m-3 text-center">
+                <h2 class="h4 text-secondary">{{item.name}}</h2>
+                <a href="{{ path('app_category_details',  {id: item.id} ) }}">
+                <div class="container">
+                    <img class="img-fluid" src="{{app.request.basepath}}/uploads/category/{{item.imageName}}" alt="{{item.imageName}}" />
+                </div>
+                </a>
+                <span class="h6 mutted text-white">
+                    {{item.description}}
+                </span>
+            
+                
+           </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

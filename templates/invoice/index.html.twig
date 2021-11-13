@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+{% block body %}
+
+    <div class="fred">
+        <h1 class="h3 text-primary text-center mt-5">
+            {{ plurilaze(invoices | length, 'Invoice', 'Invoices') }}
+        </h1>
+    </div>
+
+    <div class="parents row d-flex">
+
+        {% for invoice in invoices %}
+           <div class="items col-3 bg-info m-3 text-center">
+                
+                <a href="{{ path('app_invoice_details',  {id: invoice.id} ) }}">
+                <h2 class="h4 text-secondary">ref: {{invoice.reference}}</h2>
+                <h2 class="h4 text-secondary">ref: {{invoice.amount}} Xaf</h2>
+                </a>
+                <span class="h6 mutted text-white">
+                 {{invoice.status}}
+                    
+                </span>
+            
+                
+           </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

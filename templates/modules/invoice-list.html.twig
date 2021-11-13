@@ -1,0 +1,90 @@
+
+{% extends 'layouts/base.html.twig'%}
+{% block title 'My admin dashboard page' %}
+
+{% block body %}
+  <!-- BEGIN: Body-->
+  <body class="vertical-layout vertical-menu-modern 2-columns   menu-collapsed fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+
+{{ include("layouts/partials/_header.html.twig") }}
+
+
+   {{ include("layouts/partials/_menu.html.twig") }}
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content mb-5">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-body"><div class="row mb-1 mt-1 mt-md-0">
+      <div class="col-12">
+        
+        <a href="invoice-add.html" class="btn btn-secondary btn-lg">
+          <i class="fas fa-plus"></i>
+          Create Invoice
+          </a>
+      </div>
+    </div>
+<div class="card">
+  <div class="card-body">
+    <!-- datatable started -->
+    
+    <div id="app-invoice-wrapper" class="">
+      <table id="app-invoice-table" class="table" style="width: 100%;">
+        <thead class="border-bottom border-dark bg-secondary text-white">
+          <tr>
+            <th></th>
+            <th></th>
+            <th>
+              <span class="align-middle">Invoice#</span>
+            </th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Tags</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for invoice in invoices %}
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <a href="invoice-view.html">{{ invoice.reference }}</a>
+            </td>
+            <td><span class="invoice-amount">{{ invoice.amount }}</span></td>
+            <td><span class="invoice-date">{{ invoice.createdAt|date('Y-m-d') }}</span></td>
+            <td><span class="invoice-customer">Communications</span></td>
+            <td>
+              <span class="bullet bullet-success bullet-sm"></span>
+              Technology
+            </td>
+            <td><span class="badge badge-success badge-pill">{{ invoice.status }}</span></td>
+            <td>
+              <div class="invoice-action">
+                <a href="invoice-view.html" class="invoice-action-view mr-1">
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a href="invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                  <i class="fas fa-edit"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+
+  </body>
+  {% endblock %}

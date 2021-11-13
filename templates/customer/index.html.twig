@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+{% block body %}
+
+    <div class="fred">
+        <h1 class="h3 text-primary text-center mt-5">
+            {{ plurilaze(customers | length, 'Customer', 'Customers') }}
+        </h1>
+    </div>
+
+    <div class="parents row d-flex">
+
+        {% for customer in customers %}
+           <div class="items col-3 bg-info m-3 text-center">
+                
+                <a href="{{ path('app_customer_details',  {id: customer.id} ) }}">
+                <h2 class="h4 text-secondary">Nom: {{customer.name}}</h2>
+                <h2 class="h4 text-secondary">Phone: {{customer.phone}}</h2>
+                <h2 class="h4 text-secondary">Company: {{customer.company}}</h2>
+                </a>
+                <span class="h6 mutted text-white">
+                    Poste: {{customer.poste}}
+                    
+                </span>
+            
+                
+           </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

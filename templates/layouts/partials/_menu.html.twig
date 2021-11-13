@@ -1,0 +1,52 @@
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item">
+            <a href="{{ path('app_dashboard') }}">
+              <i class="fas fa-home"></i>
+              <span class="menu-title" data-i18n="Dashboard">Dashboard</span>
+            </a>
+          
+          </li>
+          <li class=" nav-item">
+            <a href="#">
+              <i class="fas fa-desktop"></i>
+              <span class="menu-title" data-i18n="Templates">Invoices</span>
+            </a>
+            <ul class="menu-content">
+              <li><a class="menu-item" href="{{ path('app_invoice') }}" data-i18n="Invoice List">Invoice List</a>
+              </li>
+              <li><a class="menu-item" href="invoice-view.html" data-i18n="Invoice View">Invoice View</a>
+              </li>
+              <li><a class="menu-item" href="invoice-edit.html" data-i18n="Invoice Edit">invoice Edit</a>
+              </li>
+              <li><a class="menu-item" href="{{ path('app_invoice_create') }}" data-i18n="Invoice Add">invoice Add</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item">
+            <a href="#">
+              <i class="fas fa-layer-group"></i>
+              <span class="menu-title" data-i18n="Layouts">Formations</span>
+            </a>
+             <ul class="menu-content">
+              <li><a class="menu-item" href="{{ path('app_formation') }}" data-i18n="Invoice List">Invoice List</a>
+              </li>
+              <li><a class="menu-item" href="invoice-view.html" data-i18n="Invoice View">Invoice View</a>
+              </li>
+              <li><a class="menu-item" href="invoice-edit.html" data-i18n="Invoice Edit">invoice Edit</a>
+              </li>
+              <li><a class="menu-item" href="{{ path('app_formation_create') }}" data-i18n="Invoice Add">invoice Add</a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item">
+            <a href="#">
+              <i class="fas fa-bolt"></i>
+              <span class="menu-title" data-i18n="Starter kit">Customers</span>
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>

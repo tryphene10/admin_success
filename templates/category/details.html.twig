@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html.twig' %}
+{% block title 'Show category details' %}
+
+{% block body %}
+<h2 class="h3 text-primary text-center">Details for the category {{category.id}}</h2>
+    <div class="centre col-6">
+        <h2>{{category.name}}</h2>
+        <p>{{category.description}}</p>
+        <div>
+            <a href="{{ path('app_category_update', {id: category.id}) }}">Edit</a>
+            <a href="{{ path('app_category_delete', {id: category.id}) }}">Delete</a>
+        </div>
+    </div>
+{% endblock %}
+    

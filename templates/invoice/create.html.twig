@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html.twig'%}
+{% block title 'Invoice create page' %}
+
+{% block body %}
+    <body>
+    <h2 class="h2 text-center text-dark">Create a new Invoice</h2>
+        {{ form_start(formulaire) }}
+        <select class="form-select" aria-label="Default select example" name="customer">
+            <option selected>Open this select menu</option>
+            {% for customer in customers %}
+                <option>{{customer.name}}</option>
+            {% endfor %}
+            
+        <select>
+        {{ form_widget(formulaire) }}
+        <div class="d-grid mx-auto">
+            <button type="submit" class="btn btn-primary">Create new invoice</button>
+        </div>
+        {{ form_end(formulaire) }}
+    </body>
+{% endblock %}

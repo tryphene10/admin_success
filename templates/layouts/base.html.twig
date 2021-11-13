@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang={{ app.request.locale }}>
+    <head>
+        <meta charset="UTF-8">
+
+        <title> 
+            {% block title %}Admin success!{% endblock %} 
+        </title>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/vendors.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/bootstrap-extended.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/colors.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/components.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu-modern.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/core/colors/palette-gradient.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/fonts/simple-line-icons/style.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/pages/card-statistics.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/css/pages/vertical-timeline.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/fontawesome/css/all.css') }}">
+
+        
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/pickers/pickadate/pickadate.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/forms/toggle/switchery.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/js/forms/repeater/jquery.repeater.min.j') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/js/scripts/forms/form-repeater.min.js') }}">
+
+        <link rel="stylesheet" href="{{ asset('app-assets/css/pages/app-invoice.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/extensions/colReorder.dataTables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('app-assets/vendors/css/tables/extensions/fixedHeader.dataTables.min.css') }}">
+
+        
+
+    </head>
+
+        <body>
+
+            {# {{ include("layouts/partials/_flash_message.html.twig") }}
+            {{ include("layouts/partials/_nav.html.twig") }} #}
+
+            {# <main class="main container"> #}
+        
+                {% block body %}{% endblock %}
+
+            {# </main> #}
+
+            {# {{ include("layouts/partials/_footer.html.twig") }} #}
+            
+            {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+            {% endblock %}
+            <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/charts/apexcharts/apexcharts.min.js') }}"></script>
+            <script src="{{ asset('app-assets/js/scripts/cards/card-statistics.min.js') }}"></script>
+
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js') }}"></script>
+
+            <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/picker.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/picker.date.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/forms/repeater/jquery.repeater.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/forms/toggle/switchery.min.js') }}"></script>
+
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.colReorder.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+            <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.fixedHeader.min.js') }}"></script>
+            <script src="{{ asset('app-assets/js/scripts/tables/datatables-extensions/datatable-responsive.min.js') }}"></script>
+
+            <script src="{{ asset('app-assets/js/core/app-menu.min.js') }}"></script>
+            <script src="{{ asset('app-assets/js/core/app.min.js') }}"></script>
+            <script src="{{ asset('app-assets/js/scripts/customizer.min.js') }}"></script>
+            
+
+            <script src="{{ asset('app-assets/js/scripts/pages/app-invoice.min.js') }}"></script>
+        </body>
+</html>

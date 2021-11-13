@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html.twig' %}
+{% block title 'Show Formation details' %}
+
+{% block body %}
+<h2 class="h3 text-primary text-center">Details for the formation {{formations.id}}</h2>
+    <div class="centre col-6">
+        <h2>{{formations.name}}</h2>
+        <p>{{formations.price}}</p>
+        <p>{{formations.status}}</p>
+        <p>{{formations.description}}</p>
+        <div>
+            <a href="{{ path('app_formation_update', {id: formations.id}) }}">Edit</a>
+            <a href="{{ path('app_formation_delete', {id: formations.id}) }}">Delete</a>
+        </div>
+    </div>
+{% endblock %}
+    

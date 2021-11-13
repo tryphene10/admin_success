@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html.twig'%}
+{% block title 'Formation create page' %}
+
+{% block body %}
+    <body>
+    <h2 class="h2 text-center text-dark">Create a new formation</h2>
+        {{ form_start(formulaire) }}
+        <select class="form-select" aria-label="Default select example" name="category">
+            <option selected>Open this select menu</option>
+            {% for category in categories %}
+                <option>{{category.name}}</option>
+            {% endfor %}
+            
+        <select>
+        {{ form_widget(formulaire) }}
+        <div class="d-grid mx-auto">
+            <button type="submit" class="btn btn-primary">Create new formation</button>
+        </div>
+        {{ form_end(formulaire) }}
+    </body>
+{% endblock %}

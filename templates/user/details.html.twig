@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html.twig' %}
+{% block title 'Show category details' %}
+
+{% block body %}
+<h2 class="h3 text-primary text-center">Details for the user {{users.id}}</h2>
+    <div class="centre col-6">
+        <h2>{{users.userName}}</h2>
+        <p>{{users.password}}</p>
+        <div>
+            <a href="{{ path('app_user_update', {id: users.id}) }}">Edit</a>
+            <a href="{{ path('app_user_delete', {id: users.id}) }}">Delete</a>
+        </div>
+    </div>
+{% endblock %}
+    

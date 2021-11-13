@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+
+{% block body %}
+
+    <div class="fred">
+        <h1 class="h3 text-primary text-center mt-5">
+            {{ plurilaze(users | length, 'User', 'Users') }}
+        </h1>
+    </div>
+
+    <div class="parents row d-flex">
+
+        {% for user in users %}
+           <div class="items col-3 bg-info m-3 text-center">
+                
+                <a href="{{ path('app_user_details',  {id: user.id} ) }}">
+                <h2 class="h4 text-secondary">{{user.userName}}</h2>
+                </a>
+                <span class="h6 mutted text-white">
+                    {{user.password}}
+                    
+                </span>
+            
+                
+           </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

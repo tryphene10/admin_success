@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html.twig'%}
+{% block title 'Category create page' %}
+
+{% block body %}
+    <body>
+    <h2 class="h2 text-center text-dark">Create a new customer</h2>
+        {{ form_start(formulaire) }}
+        {{ form_widget(formulaire) }}
+        <div class="d-grid mx-auto">
+            <button type="submit" class="btn btn-primary">Create new Customer</button>
+        </div>
+        {{ form_end(formulaire) }}
+    </body>
+{% endblock %}
