@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Formation;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\FormationRepository;
@@ -37,11 +38,21 @@ class IndexController extends AbstractController
     }
 
      /**
-     * @Route("/formation/categorie", name="formationCategorie")
+     * @Route("/catalogues-des-formations-de-success-consults", name="formationCategorie")
      */
-    public function formations(): Response
+    public function formations(CategoryRepository $repo): Response
     {
+        $categorie = $repo->findAll();
         return $this->render('user-interface/page/services/formation.html.twig');
+    }
+    
+    /**
+     * @Route("/demande-un-devis", name="devit")
+    */
+    public function devitFormation(): Response
+    {
+        
+        return $this->render('user-interface/page/devit/devit.html.twig');
     }
 
 }
