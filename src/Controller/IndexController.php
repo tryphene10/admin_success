@@ -47,7 +47,7 @@ class IndexController extends AbstractController
     }
     
     /**
-     * @Route("/demande-un-devis", name="devit")
+     * @Route("/demande-un-devis", name="devisFormation")
     */
     public function devitFormation(): Response
     {
